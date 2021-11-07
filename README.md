@@ -11,6 +11,10 @@ This is not a serious application. Its a small tool where I just played with the
 * Previews are created where the source color, the derivative color blended with the background and the background color are displayed.
 * Eventually, sets of colors can be saved to `*.json` or `*.csv` files. For JSON serialization, the Jakarta JSON-Bindings API (`jakarta.json.bind-api`) in version 2.0 is used. Its just an experiment how this works. For CSV I was playing with Reflection in order to mimic how the JSON-B adapter worked until I found `com.opencsv:opencsv:5.5.2`. Well but there I was not yet successful in getting it working the modular-way. OpenCSV is actually very comfortable to use, its just not yet modularized. Hence some work still ahead.
 
+## Things that dont work as expected:
+* Well, the color pipette has currently an issue on MacOS (but most likely on any other system with HiDPI scaling). The app creates screenshots for each screen using the `javafx.scene.robot.Robot().getScreenCapture(...)` function. Then, the screenshot is displayed in a stage for each screen. Unfortunately, on MacOS with Retina display, the image turnsout to be blurry as it is only half of the required resolution - don't know yet whats wrong there. Most likely I am using the API in a wrong way and yup, need to read here.
+* OpenCSV is not yet working due to lack of a module descriptor.
+
 ## Screenshots
 
 <div>
