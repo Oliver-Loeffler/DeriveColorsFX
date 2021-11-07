@@ -1,0 +1,12 @@
+magick convert -size 16x16 DeriveColors.svg icon_16x16.png
+magick convert -size 32x32 DeriveColors.svg icon_32x32.png
+magick convert -size 32x32 DeriveColors.svg icon_16x16@2x.png
+magick convert -size 48x48 DeriveColors.svg icon_48x48.png
+magick convert -size 64x64 DeriveColors.svg icon_64x64.png
+magick convert -size 64x64 DeriveColors.svg icon_32x32@2x.png
+magick convert -size 128x128 DeriveColors.svg icon_128x128.png
+magick convert -size 128x128 DeriveColors.svg icon_64x64@2x.png
+magick convert -size 256x256 DeriveColors.svg icon_256x256.png
+magick convert -size 256x256 DeriveColors.svg icon_128x128@2x.png
+magick convert -size 512x512 DeriveColors.svg icon_512x512.png
+magick convert -size 512x512 DeriveColors.svg icon_256x256@2x.png

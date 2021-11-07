@@ -1,0 +1,67 @@
+.title {
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+}
+
+.hue-slider { 
+	-track-color: linear-gradient(to right, #ff0000 0%, #00ff00 30%, #0000ff 60%, white 100%);
+	-fx-text-box-border: #000000;
+}
+
+.hue-slider .track {
+      -fx-background-color:
+          -fx-shadow-highlight-color,
+          linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+          -track-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 0.25em, 0.25em, 0.15em;
+    -fx-padding: 0.25em;
+
+}
+
+.saturation-slider { 
+	-track-color: linear-gradient(to right, #ff0000 0%, white 100%);
+	-fx-text-box-border: #000000;
+}
+
+.saturation-slider .track {
+      -fx-background-color:
+          -fx-shadow-highlight-color,
+          linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+          -track-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 0.25em, 0.25em, 0.15em;
+    -fx-padding: 0.25em;
+}
+
+.brightness-slider { 
+	-track-color: linear-gradient(to right, #00ff00 0%, white 100%);
+	-fx-text-box-border: #000000;
+}
+
+.brightness-slider .track {
+      -fx-background-color:
+          -fx-shadow-highlight-color,
+          linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+          -track-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 0.25em, 0.25em, 0.15em;
+    -fx-padding: 0.25em;
+}
+
+.opacity-slider { 
+	-track-color: linear-gradient(to right, rgba(79, 51, 134, 0) 0%, rgba(79, 51, 134, 255) 100%);
+	-track-background: white;
+	-fx-text-box-border: #000000;
+}
+
+.opacity-slider .track {
+      -fx-background-color:
+          -fx-shadow-highlight-color,
+          linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+          -track-background,
+          -track-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+    -fx-background-radius: 0.25em, 0.25em,0.15em, 0.15em;
+    -fx-padding: 0.25em;
+}

@@ -1,0 +1,1 @@
+magick convert DeriveColors.svg -define icon:auto-resize=64,48,48,32,16 DeriveColors.ico

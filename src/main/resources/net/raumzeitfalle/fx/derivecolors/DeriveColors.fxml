@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="390.0" minWidth="340.0" prefHeight="587.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.raumzeitfalle.fx.derivecolors.DeriveColorsController">
+   <children>
+      <GridPane layoutX="124.0" layoutY="50.0" maxHeight="90.0" prefHeight="70.0" prefWidth="597.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="50.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="160.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="60.0" valignment="TOP" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="BOTTOM_RIGHT" maxWidth="1.7976931348623157E308" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BASELINE" GridPane.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" onMouseClicked="#pickSourceColorFromScreen" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@pipette_16x16@2x.png" />
+                     </image>
+                  </ImageView>
+                  <Label focusTraversable="false" maxWidth="1.7976931348623157E308" text="Source" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="2">
+               <children>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" onMouseClicked="#pickBackgroundColorFromScreen" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@pipette_16x16@2x.png" />
+                     </image>
+                  </ImageView>
+                  <Label focusTraversable="false" text="Background" />
+               </children>
+            </HBox>
+            <Label alignment="BOTTOM_LEFT" focusTraversable="false" text="Derived" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </Label>
+            <ColorPicker fx:id="rootColorPicker" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#updateRootColor" style="-fx-background-radius: 12 0 0 12;" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+               <GridPane.margin>
+                  <Insets top="3.0" />
+               </GridPane.margin>
+               <value>
+                  <Color red="0.30980393290519714" green="0.20000000298023224" blue="0.5254902243614197" />
+               </value>
+            </ColorPicker>
+            <ColorPicker fx:id="backgroundColorPicker" maxHeight="50.0" maxWidth="1.7976931348623157E308" onAction="#updateBackgroundColor" prefHeight="50.0" style="-fx-background-radius: 0 12 12 0;" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <GridPane.margin>
+                  <Insets right="2.0" top="3.0" />
+               </GridPane.margin>
+            </ColorPicker>
+            <AnchorPane fx:id="previewBackground" maxHeight="52.0" maxWidth="1.7976931348623157E308" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+               <GridPane.margin>
+                  <Insets top="3.0" />
+               </GridPane.margin>
+               <children>
+                  <Region fx:id="previewRegion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1 1 1 0; -fx-background-color: rgba(100,60,120,0.5);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Region fx:id="sourceRegion" layoutX="-86.0" layoutY="-76.0" maxWidth="30.0" prefHeight="200.0" prefWidth="30.0" style="-fx-border-color: black; -fx-border-width: 1 0 1 1; -fx-background-color: #4f3386;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <GridPane layoutX="40.0" layoutY="102.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="130.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="24.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Button maxHeight="24.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#reset" style="-fx-background-radius: 12 12 12 12;" text="Reset" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="62.0" layoutY="121.0" prefWidth="311.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="166.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="109.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="109.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="34.0" minHeight="20.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="34.0" minHeight="10.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="34.0" minHeight="10.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="34.0" minHeight="10.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Slider fx:id="hueSlider" blockIncrement="1.0" majorTickUnit="30.0" max="180.0" min="-180.0" minorTickCount="2" showTickLabels="true" showTickMarks="true" styleClass="hue-slider" stylesheets="@DeriveColors.css" value="20.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" right="10.0" />
+               </GridPane.margin>
+            </Slider>
+            <TextField fx:id="hueField" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+            <Slider fx:id="satSlider" blockIncrement="0.01" majorTickUnit="0.2" max="1.0" minorTickCount="9" showTickLabels="true" showTickMarks="true" styleClass="saturation-slider" stylesheets="@DeriveColors.css" value="0.8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" right="10.0" />
+               </GridPane.margin>
+            </Slider>
+            <TextField fx:id="saturationField" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Slider fx:id="brightnessSlider" blockIncrement="0.01" majorTickUnit="0.25" max="4.0" minorTickCount="9" showTickLabels="true" showTickMarks="true" styleClass="brightness-slider" stylesheets="@DeriveColors.css" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" right="10.0" />
+               </GridPane.margin>
+            </Slider>
+            <TextField fx:id="brightnessField" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Slider fx:id="opacitySlider" blockIncrement="0.01" majorTickUnit="0.2" max="1.0" minorTickCount="9" prefHeight="64.0" prefWidth="196.0" showTickLabels="true" showTickMarks="true" styleClass="opacity-slider" stylesheets="@DeriveColors.css" value="0.5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" right="10.0" />
+               </GridPane.margin>
+            </Slider>
+            <TextField fx:id="opacityField" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <Label focusTraversable="false" text="Hue" />
+            <Label focusTraversable="false" text="Saturation" GridPane.rowIndex="1" />
+            <Label focusTraversable="false" text="Brightness" GridPane.rowIndex="2" />
+            <Label focusTraversable="false" text="Opacity" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="40.0" layoutY="380.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="312.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="180.0" />
+          <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="178.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label focusTraversable="false" text="Derived" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" />
+            <Label focusTraversable="false" text="History" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="40.0" layoutY="215.0" prefHeight="30.0" prefWidth="320.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="306.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button maxHeight="24.0" maxWidth="200.0" mnemonicParsing="false" onAction="#addDerivedColorToList" style="-fx-background-radius: 12 0 0 12;" text="Add" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Button fx:id="removeButton" alignment="CENTER" maxHeight="24.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeSelectedDerivedColorFromList" style="-fx-background-radius: 0 0 0 0;" text="Remove" GridPane.columnIndex="1" />
+            <MenuButton contentDisplay="CENTER" maxHeight="24.0" maxWidth="200.0" mnemonicParsing="false" style="-fx-background-radius: 0 12 12 0;" text="Clear" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#removeAllDerivedColors" text="Remove all derived colors" />
+                <MenuItem mnemonicParsing="false" onAction="#clearHistory" text="Clear history" />
+                  <MenuItem mnemonicParsing="false" onAction="#clearAll" text="Clear all" />
+              </items>
+            </MenuButton>
+         </children>
+      </GridPane>
+      <GridPane layoutX="54.0" layoutY="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane maxHeight="50.0" minWidth="200.0" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 0 0 24 24;" GridPane.columnIndex="1">
+               <children>
+                  <Label alignment="CENTER" focusTraversable="false" layoutX="34.0" layoutY="10.0" prefHeight="38.0" prefWidth="200.0" styleClass="title" stylesheets="@DeriveColors.css" text="Color.deriveColor(...)" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+            </Label>
+               </children>
+               <effect>
+                  <DropShadow height="16.0" radius="7.5" width="16.0" />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <GridPane layoutX="25.0" layoutY="502.0" maxHeight="30.0" maxWidth="300.0" prefHeight="30.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="300.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <MenuButton alignment="CENTER" maxHeight="24.0" maxWidth="200.0" mnemonicParsing="false" style="-fx-background-radius: 12 0 0 12;" text="Load" GridPane.halignment="RIGHT" GridPane.hgrow="SOMETIMES">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#loadFromJson" text="JSON" />
+                <MenuItem mnemonicParsing="false" onAction="#loadFromCsv" text="CSV" />
+              </items>
+            </MenuButton>
+            <Button alignment="CENTER" maxHeight="24.0" maxWidth="200.0" mnemonicParsing="false" onAction="#copyDerivedColorToClipboard" style="-fx-background-radius: 0 0 0 0;" text="Copy" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+            <MenuButton alignment="CENTER" maxHeight="24.0" maxWidth="200.0" mnemonicParsing="false" style="-fx-background-radius: 0 12 12 0;" text="Save" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.vgrow="ALWAYS">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#saveToJson" text="JSON" />
+                <MenuItem mnemonicParsing="false" onAction="#saveToCsv" text="CSV" />
+              </items>
+            </MenuButton>
+         </children>
+      </GridPane>
+      <Label fx:id="loadedFileLabel" alignment="CENTER" layoutX="109.0" layoutY="524.0" text="filename" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+      <GridPane layoutX="75.0" layoutY="381.0" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="342.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ListView fx:id="colorHistory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="60.0" prefHeight="200.0" prefWidth="60.0" GridPane.columnIndex="1" />
+            <ListView fx:id="availableColors" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="183.0" prefWidth="207.0" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,9 @@
+/.settings/
+.project
+.classpath
+/target/
+/bin/
+/build/
+/releases/
+*.log
+*.dmp

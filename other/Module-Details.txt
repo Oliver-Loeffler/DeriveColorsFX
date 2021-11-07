@@ -1,0 +1,18 @@
+open module com.opencsv {
+    requires org.apache.commons.lang3;
+    exports com.opencsv;
+    exports com.opencsv.bean;
+    exports com.opencsv.bean.comparator;
+    exports com.opencsv.bean.concurrent;
+    exports com.opencsv.bean.customconverter;
+    exports com.opencsv.bean.exceptionhandler;
+    exports com.opencsv.bean.function;
+    exports com.opencsv.bean.processor;
+    exports com.opencsv.bean.util;
+    exports com.opencsv.bean.validators
+    exports com.opencsv.enums;
+    exports com.opencsv.exceptions;
+    exports com.opencsv.processor;
+    exports com.opencsv.stream.reader;
+    exports com.opencsv.validators;
+}
