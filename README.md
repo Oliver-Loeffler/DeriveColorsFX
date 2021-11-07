@@ -6,7 +6,7 @@
 * Ensure that the new JDK is available on your command line.
 * ensure a recent version of Maven is installed (3.8+)
 
-```
+```bash
 # First list all installed JDKs - JDK17 should be listed there
 % /usr/libexec/java_home -V
 
