@@ -14,7 +14,10 @@
 % export JAVA_HOME=`/usr/libexec/java_home -v 17`
 
 # clone the project from Github
-
-
+% git clone https://github.com/Oliver-Loeffler/DeriveColorsFX.git
+% cd DeriveColorsFX
+% mvn package
+% sh mac-package.sh
 ```
 
+* `mac-package.sh` will execute `jlink` and `jpackage` so that eventually a DMG image will be available in `target/mac-installer`.
