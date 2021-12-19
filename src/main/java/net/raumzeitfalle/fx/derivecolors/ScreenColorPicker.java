@@ -62,8 +62,15 @@ public class ScreenColorPicker {
     }
     
     private WritableImage createScreenShot(Screen screen) {
-        Rectangle2D bounds = screen.getVisualBounds();
-        return new Robot().getScreenCapture(null, bounds);
+        Rectangle2D bounds = screen.getBounds();
+        double x0 = bounds.getMinX()*screen.getOutputScaleX();
+        double y0 = bounds.getMinY()*screen.getOutputScaleY();
+        double width = bounds.getWidth()*screen.getOutputScaleX();
+        double height = bounds.getHeight()*screen.getOutputScaleY();
+        
+        System.out.println("start: " + x0+"/"+y0+" -> " + width + "/" + height);
+        
+        return new Robot().getScreenCapture(null, x0, y0, width, height);
     }
 
     private void pickColorOnMouseClick(MouseEvent event) {
