@@ -68,5 +68,5 @@ As the Maven-JavaFX plugin is used, the app can be launched as:
 % sh mac-package.sh
 ```
 
-* `mac-package.sh` will execute `jlink` and `jpackage` so that eventually a DMG image will be available in `target/mac-installer`.
-* There is no download option yet as I am currently no able to properly sign the created DMG, hence you have to create the DMG on your own, unfortunately. But, this is something I am going to explore as well once a while.
+* `mac-package.sh` will execute `jlink` and `jpackage` so that eventually a PKG image will be available in `target/mac-installer`.
+
