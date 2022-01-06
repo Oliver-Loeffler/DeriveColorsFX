@@ -1,9 +1,13 @@
 /.settings/
 .project
 .classpath
+.DS_Store
 /target/
 /bin/
 /build/
 /releases/
 *.log
 *.dmp
+*.dmg
+*.pkg
+*.msi

@@ -1,7 +1,10 @@
+mvn clean install
+
 export VERSION="1.0.0"
 export INSTALL_DIR="target/mac-installer"
 export MAIN_CLASS="net.raumzeitfalle.fx.derivecolors.App"
 export MOD_PATH="target/modulepath"
+export RESOURCE_DIR="packaging/macos"
 
 jdeps --module-path $MOD_PATH --print-module-deps --ignore-missing-deps target/derive-colors-$VERSION.jar
 
@@ -22,13 +25,13 @@ jpackage --app-version $VERSION \
 --main-jar derive-colors-$VERSION.jar \
 --main-class $MAIN_CLASS \
 --name DeriveColorsFX \
---description "Creates a color palette using JavaFX Color::deriveColor methd. Will require screen acces in order to pick colors." \
+--description "Creates a color palette using JavaFX Color::deriveColor method. Will require screen access in order to pick colors." \
 --vendor "Raumzeitfalle.de" \
+--about-url "https://github.com/Oliver-Loeffler/DeriveColorsFX#-derivecolorsfx" \
 --verbose \
 --runtime-image target/runtime \
+--icon packaging/macos/DeriveColors.icns \
 --dest $INSTALL_DIR \
---type dmg \
+--type pkg \
 --mac-package-identifier net.raumzeitfalle.fx.derivecolors \
---icon packaging/osx/DeriveColors.icns
-
-
+--resource-dir $RESOURCE_DIR
