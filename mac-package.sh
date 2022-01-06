@@ -1,6 +1,6 @@
 mvn clean install
 
-export VERSION="1.0.0"
+export VERSION="1.1.0"
 export INSTALL_DIR="target/mac-installer"
 export MAIN_CLASS="net.raumzeitfalle.fx.derivecolors.App"
 export MOD_PATH="target/modulepath"

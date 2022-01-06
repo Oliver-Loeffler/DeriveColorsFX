@@ -64,9 +64,8 @@ As the Maven-JavaFX plugin is used, the app can be launched as:
 # clone the project from Github
 % git clone https://github.com/Oliver-Loeffler/DeriveColorsFX.git
 % cd DeriveColorsFX
-% mvn package
 % sh mac-package.sh
 ```
 
-* `mac-package.sh` will execute `jlink` and `jpackage` so that eventually a PKG image will be available in `target/mac-installer`.
+* `mac-package.sh` will execute the Maven build followed by `jlink` and `jpackage` so that eventually a PKG image will be available in `target/mac-installer`.
 

@@ -1,5 +1,5 @@
 @ECHO OFF
-set VERSION=1.0.0
+set VERSION=1.1.0
 set INSTALL_DIR=target/win-installer
 set MAIN_CLASS=net.raumzeitfalle.fx.derivecolors.App
 set MOD_PATH=target\modulepath
