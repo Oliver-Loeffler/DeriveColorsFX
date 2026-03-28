@@ -1,4 +1,12 @@
-# ![DeriveColors Icon](/doc/DeriveColors.svg) DeriveColorsFX
+#  [DeriveColorsFX](https://codeberg.org/Oliver-Loeffler/DeriveColorsFX) just moved to [Codeberg.org](Codeberg.org)
+
+This repository has been moved to [Codeberg.org](https://codeberg.org/Oliver-Loeffler/DeriveColorsFX).
+There won't be any active development here anymors. So in case of questions / issues. Please visit codeberg.org.
+
+Why?
+[Community Maintencne Matters](https://blog.codeberg.org/community-maintenance-matters.html)
+
+# ![DeriveColors Icon](/doc/DeriveColors.svg) [DeriveColorsFX](https://codeberg.org/Oliver-Loeffler/DeriveColorsFX)
 
 <a href="https://foojay.io/works-with-openjdk"><img align="right" src="https://github.com/foojayio/badges/raw/main/works_with_openjdk/Works-with-OpenJDK.png" width="100"></a>
 
